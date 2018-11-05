@@ -1,0 +1,467 @@
+.aside-menu {
+  width: 15%;
+  height: 100%;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  border-right: none;
+  background-color: #1b1b1b; }
+  .aside-menu .aside-item {
+    background-color: #313131;
+    border: 2px solid #000000;
+    border-right: none;
+    margin-top: 10px;
+    margin-left: 10px;
+    position: relative;
+    height: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .aside-menu .aside-item img {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      background-color: #1b1b1b; }
+    .aside-menu .aside-item .aside-icon {
+      position: absolute;
+      top: 28%;
+      left: 12%;
+      font-size: 20px; }
+    .aside-menu .aside-item:nth-child(3) .aside-icon {
+      font-size: 30px; }
+    .aside-menu .aside-item .aside-name {
+      padding-left: 20%;
+      height: 100%;
+      display: inline-flex;
+      align-items: center; }
+  .aside-menu .el-menu-item.is-active {
+    border: 2px solid #00ffff;
+    border-right: none; }
+
+/*home*/
+.home-aside .home-aside-item .svg-logo {
+  font-size: 14px;
+  padding: 0 8px 0 10px; }
+
+.content {
+  position: absolute;
+  top: 50px;
+  left: 15%;
+  width: 83%;
+  padding: .5%;
+  /*home*/
+  /*sensor*/
+  /*detactor*/
+  /*intellPDU*/
+  /*intellFan*/
+  /*netSwitch*/
+  /*PBX*/
+  /*DVRecorder*/
+  /*brodSys-prof*/
+  /*weather*/
+  /*userManage*/ }
+  .content .section {
+    background-color: #1b1b1b;
+    border-radius: 3px;
+    margin: .5%; }
+    .content .section .section-title {
+      border-bottom: 1px solid #434343;
+      height: 30px;
+      width: 100%;
+      display: inline-flex;
+      align-items: center; }
+      .content .section .section-title .svg-logo {
+        font-size: 14px;
+        padding: 0 8px 0 10px; }
+    .content .section .section-info {
+      padding: 15px; }
+  .content .home-section #intellPDU-Title .svg-PDU {
+    font-size: 33px;
+    margin-top: 6px; }
+  .content .home-section #intellPDU-info #progress-wrap .prof-item {
+    width: 100%;
+    height: 33px;
+    display: inline-flex;
+    align-items: center; }
+    .content .home-section #intellPDU-info #progress-wrap .prof-item .progress-box .progress-item .el-progress-bar__outer {
+      height: 11px !important;
+      border-radius: initial;
+      background-color: #000000; }
+      .content .home-section #intellPDU-info #progress-wrap .prof-item .progress-box .progress-item .el-progress-bar__outer .el-progress-bar__inner {
+        border-radius: initial; }
+    .content .home-section #intellPDU-info #progress-wrap .prof-item .progress-value {
+      text-indent: 8px;
+      /*voltage-value-color*/
+      /*current-value-color*/
+      /*power-value-color*/
+      /*frequency-value-color*/
+      /*eleEnergy-value-color*/ }
+      .content .home-section #intellPDU-info #progress-wrap .prof-item .progress-value i {
+        font-style: normal; }
+      .content .home-section #intellPDU-info #progress-wrap .prof-item .progress-value .voltage-value-color {
+        color: #00ffff; }
+      .content .home-section #intellPDU-info #progress-wrap .prof-item .progress-value .current-value-color {
+        color: #ffff00; }
+      .content .home-section #intellPDU-info #progress-wrap .prof-item .progress-value .power-value-color {
+        color: #5245ff; }
+      .content .home-section #intellPDU-info #progress-wrap .prof-item .progress-value .frequency-value-color {
+        color: #00ff7e; }
+      .content .home-section #intellPDU-info #progress-wrap .prof-item .progress-value .eleEnergy-value-color {
+        color: #ff7815; }
+  .content .home-section #intellPDU-info #pdu-right {
+    text-align: center; }
+    .content .home-section #intellPDU-info #pdu-right .pdu-connect-num span {
+      color: #5245ff;
+      font-size: 16px; }
+    .content .home-section #intellPDU-info #pdu-right .pdu-port-utilization #pdu-ratio-chart {
+      width: 70px !important;
+      height: 70px !important;
+      margin: 23px 0 10px; }
+      .content .home-section #intellPDU-info #pdu-right .pdu-port-utilization #pdu-ratio-chart .el-progress-circle {
+        width: 100% !important;
+        height: 100% !important; }
+        .content .home-section #intellPDU-info #pdu-right .pdu-port-utilization #pdu-ratio-chart .el-progress-circle svg path:first-child {
+          stroke: #000000;
+          stroke-width: 7; }
+        .content .home-section #intellPDU-info #pdu-right .pdu-port-utilization #pdu-ratio-chart .el-progress-circle svg path:last-child {
+          stroke: #fff100;
+          stroke-width: 7; }
+      .content .home-section #intellPDU-info #pdu-right .pdu-port-utilization #pdu-ratio-chart .el-progress__text {
+        color: #fff100; }
+    .content .home-section #intellPDU-info #pdu-right .pdu-port-utilization span {
+      display: block; }
+  .content .home-section #yg-sec {
+    text-align: center; }
+    .content .home-section #yg-sec .yg-icon {
+      font-size: 90px; }
+    .content .home-section #yg-sec p {
+      color: #00bd0b;
+      margin: 15px 0;
+      font-size: 16px; }
+  .content .home-section #fan-sec p {
+    padding: 5px 0; }
+  .content .home-section #fan-sec .fan-mode span {
+    color: #00ffff; }
+  .content .home-section #fan-sec #fan-item {
+    text-align: center;
+    margin: 0 0 20px; }
+    .content .home-section #fan-sec #fan-item .fan-logo {
+      font-size: 50px;
+      margin: 10px 0; }
+    .content .home-section #fan-sec #fan-item p {
+      color: #00ffff; }
+  .content .home-section #tip-title #tip-title-left {
+    padding: 0; }
+    .content .home-section #tip-title #tip-title-left #svg-logo {
+      padding: 0 0 0 10px; }
+  .content .home-section #warning-info ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0; }
+    .content .home-section #warning-info ul li .warning-left .tip-icon {
+      color: #fff100;
+      font-size: 14px; }
+    .content .home-section #warning-info ul li .warning-left span {
+      padding-left: 3px; }
+    .content .home-section #warning-info ul li .warning-right span {
+      color: #ff0048; }
+  .content .sensor-wrap .section {
+    height: 200px; }
+  .content #sensor-img {
+    height: 600px;
+    margin: .5% 0;
+    position: relative; }
+    .content #sensor-img #sensor-jigui {
+      position: absolute;
+      width: 100%;
+      height: 100%; }
+    .content #sensor-img #sensor-wsd {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      top: 50px; }
+  .content #detactor-section {
+    height: 10rem; }
+    .content #detactor-section .detactor-info .detactor-img {
+      margin: 0 auto;
+      display: block;
+      width: 300px;
+      height: 180px; }
+    .content #detactor-section .detactor-info .detactor-icon {
+      margin: 40px auto 20px;
+      display: block;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%; }
+    .content #detactor-section .detactor-info .detactor-status {
+      font-weight: normal;
+      font-size: 26px;
+      text-align: center; }
+  .content #intellPDU-prof {
+    float: left;
+    min-height: 650px; }
+    .content #intellPDU-prof .prof-item .progress-box {
+      display: inline-flex;
+      align-items: center;
+      width: 100%; }
+      .content #intellPDU-prof .prof-item .progress-box .progress-item {
+        margin: 10px 20px 10px 0;
+        width: 51%;
+        display: inline-block; }
+        .content #intellPDU-prof .prof-item .progress-box .progress-item .el-progress-bar__outer {
+          height: 11px !important;
+          border-radius: initial;
+          background-color: #000000; }
+          .content #intellPDU-prof .prof-item .progress-box .progress-item .el-progress-bar__outer .el-progress-bar__inner {
+            border-radius: initial; }
+      .content #intellPDU-prof .prof-item .progress-box .progress-value {
+        font-size: 15px;
+        /*voltage-value-color*/
+        /*current-value-color*/
+        /*power-value-color*/
+        /*frequency-value-color*/
+        /*eleEnergy-value-color*/ }
+        .content #intellPDU-prof .prof-item .progress-box .progress-value i {
+          font-style: normal; }
+        .content #intellPDU-prof .prof-item .progress-box .progress-value .voltage-value-color {
+          color: #00ffff; }
+        .content #intellPDU-prof .prof-item .progress-box .progress-value .current-value-color {
+          color: #ffff00; }
+        .content #intellPDU-prof .prof-item .progress-box .progress-value .power-value-color {
+          color: #5245ff; }
+        .content #intellPDU-prof .prof-item .progress-box .progress-value .frequency-value-color {
+          color: #00ff7e; }
+        .content #intellPDU-prof .prof-item .progress-box .progress-value .eleEnergy-value-color {
+          color: #ff7815; }
+  .content .intellPDU-port #intellPDU-info #intellPDU-ul {
+    list-style: none; }
+    .content .intellPDU-port #intellPDU-info #intellPDU-ul .intellPDU-detail {
+      padding: 4px 0; }
+      .content .intellPDU-port #intellPDU-info #intellPDU-ul .intellPDU-detail .intellPDU-status-icon {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+        background-color: #0eff0e;
+        border: 1px solid #ffffff; }
+      .content .intellPDU-port #intellPDU-info #intellPDU-ul .intellPDU-detail .intellPDU-green-icon {
+        background-color: #0eff0e; }
+      .content .intellPDU-port #intellPDU-info #intellPDU-ul .intellPDU-detail .intellPDU-red-icon {
+        background-color: #dc143c; }
+      .content .intellPDU-port #intellPDU-info #intellPDU-ul .intellPDU-detail span {
+        color: #00ffff; }
+  .content .intellFan-section {
+    float: left; }
+    .content .intellFan-section #intellFan-info {
+      padding: 20px 0 50px; }
+      .content .intellFan-section #intellFan-info .intellFan-svg {
+        width: 150px;
+        height: 150px;
+        display: block;
+        margin: 50px auto; }
+      .content .intellFan-section #intellFan-info #intellFan-calc {
+        position: relative;
+        width: 45%;
+        margin: 0 auto; }
+        .content .intellFan-section #intellFan-info #intellFan-calc .count {
+          position: absolute;
+          width: 35px;
+          height: 18px;
+          line-height: 18px;
+          background-color: #00ffff;
+          border-radius: 14px;
+          font-size: 14px;
+          color: #000000;
+          font-weight: 800;
+          text-align: center; }
+        .content .intellFan-section #intellFan-info #intellFan-calc #count-delete {
+          left: -43px; }
+        .content .intellFan-section #intellFan-info #intellFan-calc #count-plus {
+          right: -43px; }
+        .content .intellFan-section #intellFan-info #intellFan-calc #intellFan-dot {
+          display: inline-flex;
+          width: 100%;
+          justify-content: space-around; }
+          .content .intellFan-section #intellFan-info #intellFan-calc #intellFan-dot span {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            background-color: #000000;
+            border-radius: 50%; }
+      .content .intellFan-section #intellFan-info #intellFan-detail {
+        text-align: center; }
+        .content .intellFan-section #intellFan-info #intellFan-detail span {
+          display: block;
+          font-size: 14px; }
+          .content .intellFan-section #intellFan-info #intellFan-detail span:first-child {
+            color: #fff100;
+            padding: 10px 0; }
+  .content #netSw-prof #netSw-info #netSw-ul {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; }
+    .content #netSw-prof #netSw-info #netSw-ul li:last-child span {
+      color: #00ffff; }
+  .content .netSw-port #netSw-port-info #netSw-port-ul {
+    list-style: none; }
+    .content .netSw-port #netSw-port-info #netSw-port-ul .netSw-detail {
+      padding: 4px 0; }
+      .content .netSw-port #netSw-port-info #netSw-port-ul .netSw-detail .netSw-status-icon {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        display: inline-block;
+        background-color: #0eff0e;
+        border: 1px solid #ffffff; }
+      .content .netSw-port #netSw-port-info #netSw-port-ul .netSw-detail .netSw-green-icon {
+        background-color: #0eff0e; }
+      .content .netSw-port #netSw-port-info #netSw-port-ul .netSw-detail .netSw-red-icon {
+        background-color: #dc143c; }
+      .content .netSw-port #netSw-port-info #netSw-port-ul .netSw-detail .netSw-num {
+        color: #00ffff; }
+  .content #PBX-prof #PBX-info ul {
+    list-style: none;
+    float: left;
+    margin-right: 120px; }
+    .content #PBX-prof #PBX-info ul li span {
+      width: 50px;
+      float: left;
+      text-align: justify; }
+      .content #PBX-prof #PBX-info ul li span:after {
+        display: inline-block;
+        width: 100%;
+        content: ''; }
+    .content #PBX-prof #PBX-info ul li i {
+      font-style: normal;
+      padding-left: 10px; }
+  .content #PBX-prof #PBX-info #PBX-ul2 li i {
+    color: #00ffff; }
+  .content #PBX-prof #PBX-info #PBX-use-rate {
+    float: left;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 110px !important;
+    display: flex; }
+    .content #PBX-prof #PBX-info #PBX-use-rate #PBX-ratio-chart {
+      width: 70px !important;
+      height: 70px !important; }
+      .content #PBX-prof #PBX-info #PBX-use-rate #PBX-ratio-chart .el-progress-circle {
+        width: 100% !important;
+        height: 100% !important; }
+        .content #PBX-prof #PBX-info #PBX-use-rate #PBX-ratio-chart .el-progress-circle svg path:first-child {
+          stroke: #000000;
+          stroke-width: 7; }
+        .content #PBX-prof #PBX-info #PBX-use-rate #PBX-ratio-chart .el-progress-circle svg path:last-child {
+          stroke: #fff100;
+          stroke-width: 7; }
+      .content #PBX-prof #PBX-info #PBX-use-rate #PBX-ratio-chart .el-progress__text {
+        color: #fff100; }
+    .content #PBX-prof #PBX-info #PBX-use-rate span {
+      display: block;
+      text-align: center; }
+  .content .PBX-port #PBX-port-info #PBX-port-ul {
+    list-style: none; }
+    .content .PBX-port #PBX-port-info #PBX-port-ul .PBX-detail {
+      padding: 5px 0; }
+      .content .PBX-port #PBX-port-info #PBX-port-ul .PBX-detail .PBX-status-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+        background-color: #0eff0e;
+        border: 1px solid #ffffff; }
+  .content #DVR-prof #DVR-info ul {
+    list-style: none;
+    float: left;
+    margin-right: 120px; }
+    .content #DVR-prof #DVR-info ul li span {
+      width: 50px;
+      float: left;
+      text-align: justify; }
+      .content #DVR-prof #DVR-info ul li span:after {
+        display: inline-block;
+        width: 100%;
+        content: ''; }
+    .content #DVR-prof #DVR-info ul li i {
+      font-style: normal;
+      padding-left: 10px; }
+  .content #DVR-prof #DVR-info #DVR-ul2 li i {
+    color: #00ffff; }
+  .content #DVR-prof #DVR-info #DVR-ul2 li:nth-child(2) i {
+    color: #fff100; }
+  .content #DVR-prof #DVR-info #DVR-use-rate {
+    float: left;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 110px !important;
+    display: flex; }
+    .content #DVR-prof #DVR-info #DVR-use-rate #DVR-ratio-chart {
+      width: 70px !important;
+      height: 70px !important; }
+      .content #DVR-prof #DVR-info #DVR-use-rate #DVR-ratio-chart .el-progress-circle {
+        width: 100% !important;
+        height: 100% !important; }
+        .content #DVR-prof #DVR-info #DVR-use-rate #DVR-ratio-chart .el-progress-circle svg path:first-child {
+          stroke: #000000;
+          stroke-width: 7; }
+        .content #DVR-prof #DVR-info #DVR-use-rate #DVR-ratio-chart .el-progress-circle svg path:last-child {
+          stroke: #fff100;
+          stroke-width: 7; }
+      .content #DVR-prof #DVR-info #DVR-use-rate #DVR-ratio-chart .el-progress__text {
+        color: #fff100; }
+    .content #DVR-prof #DVR-info #DVR-use-rate span {
+      display: block;
+      text-align: center; }
+  .content .DVR-serial #DVR-detail {
+    list-style: none; }
+    .content .DVR-serial #DVR-detail .DVR-detail-item {
+      padding: 5px 10px;
+      border-bottom: 1px solid #434343; }
+      .content .DVR-serial #DVR-detail .DVR-detail-item .DVR-IPAddress {
+        color: #00ffff; }
+      .content .DVR-serial #DVR-detail .DVR-detail-item .DVR-status {
+        color: #00ff02; }
+  .content #brodSys-prof ul {
+    list-style: none;
+    float: left;
+    margin-right: 120px; }
+    .content #brodSys-prof ul li span {
+      width: 50px;
+      float: left;
+      text-align: justify; }
+      .content #brodSys-prof ul li span:after {
+        display: inline-block;
+        width: 100%;
+        content: ''; }
+    .content #brodSys-prof ul li i {
+      font-style: normal;
+      padding-left: 10px; }
+  .content #weather-prof #weather-info ul {
+    list-style: none;
+    float: left;
+    width: 100%; }
+    .content #weather-prof #weather-info ul li {
+      float: left;
+      width: 50%; }
+      .content #weather-prof #weather-info ul li span {
+        width: 61px;
+        float: left;
+        text-align: justify; }
+        .content #weather-prof #weather-info ul li span:after {
+          display: inline-block;
+          width: 100%;
+          content: ''; }
+      .content #weather-prof #weather-info ul li i {
+        font-style: normal;
+        padding-left: 10px; }
+  .content #weather-prof #weather-info #weather-ul2 li:nth-child(6) i {
+    color: #5245ff; }
+  .content #weather-prof #weather-info #weather-ul2 li:nth-child(7) i {
+    color: #fff100; }
+  .content #weather-prof #weather-info #weather-ul2 li:nth-child(-n+10):nth-child(n+8) i {
+    color: #00ffff; }
+
+/*# sourceMappingURL=common.css.map */

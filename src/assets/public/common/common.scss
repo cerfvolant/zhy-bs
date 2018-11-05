@@ -1,0 +1,743 @@
+.aside-menu {
+  width: 15%;
+  height: 100%;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  border-right: none;
+  background-color: #1b1b1b;
+  .aside-item {
+    background-color: #313131;
+    border: 2px solid #000000;
+    border-right: none;
+    //text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    position: relative;
+    height: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      background-color: #1b1b1b;
+    }
+    .aside-icon {
+      position: absolute;
+      top: 28%;
+      left: 12%;
+      font-size: 20px;
+    }
+    &:nth-child(3) {
+      .aside-icon {
+        font-size: 30px;
+      }
+    }
+    .aside-name {
+      padding-left: 20%;
+      height: 100%;
+      display: inline-flex;
+      align-items: center
+    }
+  }
+  .el-menu-item.is-active {
+    border: 2px solid #00ffff;
+    border-right: none;
+  }
+}
+/*home*/
+.home-aside {
+  .home-aside-item {
+    .svg-logo {
+      font-size: 14px;
+      padding: 0 8px 0 10px;
+    }
+  }
+}
+
+.content {
+  position: absolute;
+  top: 50px;
+  left: 15%;
+  width: 83%;
+  padding: .5%;
+  .section {
+    background-color: #1b1b1b;
+    border-radius: 3px;
+    margin:.5%;
+    .section-title {
+      border-bottom: 1px solid #434343;
+      height: 30px;
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      .svg-logo {
+        font-size: 14px;
+        padding: 0 8px 0 10px;
+      }
+    }
+    .section-info {
+      padding: 15px;
+    }
+  }
+  /*home*/
+  .home-section {
+    .section-info {
+      //padding-left: 20px;
+      //padding-right: 20px;
+    }
+    #intellPDU-Title {
+      .svg-PDU {
+        font-size: 33px;
+        margin-top: 6px;
+      }
+    }
+    #intellPDU-info {
+      #progress-wrap {
+        .prof-item {
+          width: 100%;
+          height: 33px;
+          display: inline-flex;
+          align-items: center;
+          .progress-box {
+            //display: inline-flex;
+            //align-items: center;
+            //width: 100%;
+            .progress-item {
+              //margin: 10px 20px 10px 0;
+              //width: 51%;
+              //display: inline-block;
+              .el-progress-bar__outer {
+                height: 11px !important;
+                border-radius: initial;
+                background-color: #000000;
+                .el-progress-bar__inner {
+                  border-radius: initial;
+                }
+              }
+            }
+          }
+          .progress-value {
+            text-indent: 8px;
+            i{
+              font-style: normal;
+            }
+            /*voltage-value-color*/
+            .voltage-value-color {
+              color: #00ffff;
+            }
+            /*current-value-color*/
+            .current-value-color {
+              color: #ffff00;
+            }
+            /*power-value-color*/
+            .power-value-color {
+              color: #5245ff;
+            }
+            /*frequency-value-color*/
+            .frequency-value-color {
+              color: #00ff7e;
+            }
+            /*eleEnergy-value-color*/
+            .eleEnergy-value-color {
+              color: #ff7815;
+            }
+          }
+        }
+      }
+      #pdu-right {
+        text-align: center;
+        .pdu-connect-num {
+          span {
+            color: #5245ff;
+            font-size: 16px;
+          }
+        }
+        .pdu-port-utilization {
+          #pdu-ratio-chart {
+            width: 70px !important;
+            height: 70px !important;
+            margin: 23px 0 10px;
+            .el-progress-circle {
+              width: 100% !important;
+              height: 100% !important;
+              svg {
+                path{
+                  &:first-child {
+                    stroke: #000000;
+                    stroke-width: 7;
+                  }
+                  &:last-child {
+                    stroke: #fff100;
+                    stroke-width: 7;
+                  }
+                }
+              }
+            }
+            .el-progress__text {
+              color: #fff100;
+            }
+          }
+          span {
+            display: block;
+          }
+        }
+      }
+    }
+    #yg-sec {
+      text-align: center;
+      .yg-icon {
+        font-size: 90px;
+      }
+      p {
+        color: #00bd0b;
+        margin: 15px 0;
+        font-size: 16px;
+      }
+    }
+    #fan-sec {
+      p {
+        padding: 5px 0;
+      }
+      .fan-mode {
+        span {
+          color: #00ffff;
+        }
+      }
+      #fan-item {
+        text-align: center;
+        margin: 0 0 20px;
+        .fan-logo {
+          font-size: 50px;
+          margin: 10px 0;
+        }
+        p {
+          color: #00ffff;
+        }
+      }
+    }
+    #tip-title {
+      #tip-title-left {
+        padding: 0;
+        #svg-logo {
+          padding: 0 0 0 10px;
+        }
+      }
+    }
+    #warning-info {
+      ul {
+        li {
+          display: flex;
+          justify-content: space-between;
+          padding: 5px 0;
+          .warning-left {
+            .tip-icon {
+              color: #fff100;
+              font-size: 14px;
+            }
+            span {
+              padding-left: 3px;
+            }
+          }
+          .warning-right {
+            span {
+              color: #ff0048;
+            }
+          }
+        }
+      }
+    }
+  }
+  /*sensor*/
+  .sensor-wrap {
+    .section {
+      height: 200px;
+    }
+  }
+  #sensor-img {
+    height: 600px;
+    margin: .5% 0;
+    position: relative;
+    #sensor-jigui {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    #sensor-wsd {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      top: 50px;
+    }
+  }
+  /*detactor*/
+  #detactor-section {
+    height: 10rem;
+    .detactor-info {
+      .detactor-img {
+        margin: 0 auto;
+        display: block;
+        width: 300px;
+        height: 180px;
+      }
+      .detactor-icon {
+        margin: 40px auto 20px;
+        display: block;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+      }
+      .detactor-status {
+        font-weight: normal;
+        font-size: 26px;
+        text-align: center;
+      }
+    }
+  }
+  /*intellPDU*/
+  #intellPDU-prof {
+    //width: 30%;
+    float: left;
+    //position: fixed;
+    //top: 0;
+    //left: 0;
+    min-height: 650px;
+    .prof-item {
+      .progress-box {
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        .progress-item {
+          margin: 10px 20px 10px 0;
+          width: 51%;
+          display: inline-block;
+          .el-progress-bar__outer {
+            height: 11px !important;
+            border-radius: initial;
+            background-color: #000000;
+            .el-progress-bar__inner {
+              border-radius: initial;
+            }
+          }
+        }
+        .progress-value {
+          font-size: 15px;
+          i{
+            font-style: normal;
+          }
+          /*voltage-value-color*/
+          .voltage-value-color {
+            color: #00ffff;
+          }
+          /*current-value-color*/
+          .current-value-color {
+            color: #ffff00;
+          }
+          /*power-value-color*/
+          .power-value-color {
+            color: #5245ff;
+          }
+          /*frequency-value-color*/
+          .frequency-value-color {
+            color: #00ff7e;
+          }
+          /*eleEnergy-value-color*/
+          .eleEnergy-value-color {
+            color: #ff7815;
+          }
+        }
+      }
+    }
+  }
+  .intellPDU-port {
+    #intellPDU-info {
+      #intellPDU-ul {
+        list-style: none;
+        .intellPDU-detail {
+          padding: 4px 0;
+          .intellPDU-status-icon {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #0eff0e;
+            border: 1px solid #ffffff;
+          }
+          .intellPDU-green-icon {
+            background-color: #0eff0e;
+          }
+          .intellPDU-red-icon {
+            background-color: #dc143c;
+          }
+          span {
+            color: #00ffff;
+          }
+        }
+      }
+    }
+  }
+  /*intellFan*/
+  .intellFan-section {
+    float: left;
+    #intellFan-info {
+      padding: 20px 0 50px;
+      .intellFan-svg {
+        width: 150px;
+        height: 150px;
+        display: block;
+        margin: 50px auto;
+      }
+      #intellFan-calc {
+        position: relative;
+        width: 45%;
+        margin: 0 auto;
+        .count {
+          position: absolute;
+          width: 35px;
+          height: 18px;
+          line-height: 18px;
+          background-color: #00ffff;
+          border-radius: 14px;
+          font-size: 14px;
+          color: #000000;
+          font-weight: 800;
+          text-align: center;
+        }
+        #count-delete {
+          left: -43px;
+        }
+        #count-plus {
+          right: -43px;
+        }
+        #intellFan-dot {
+          display: inline-flex;
+          width: 100%;
+          justify-content: space-around;
+          span {
+            width: 20px;
+            height: 20px;
+            display:inline-block;
+            background-color: #000000;
+            //background-color: #fff100;
+            border-radius: 50%;
+          }
+        }
+      }
+      #intellFan-detail {
+        text-align: center;
+        span {
+          display: block;
+          font-size: 14px;
+          &:first-child {
+            color: #fff100;
+            padding: 10px 0;
+          }
+        }
+      }
+    }
+  }
+  /*netSwitch*/
+  #netSw-prof {
+    #netSw-info {
+      #netSw-ul {
+        list-style: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        li {
+          //display: inline-block;
+          //width: 20%;
+          &:last-child {
+            span {
+              color: #00ffff;
+            }
+          }
+        }
+      }
+    }
+  }
+  .netSw-port {
+    #netSw-port-info {
+      #netSw-port-ul {
+        list-style: none;
+        .netSw-detail {
+          padding: 4px 0;
+          .netSw-status-icon {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: #0eff0e;
+            border: 1px solid #ffffff;
+            //background: url("../../static/img/user-avatar.jpg") no-repeat;
+            //background-position: 100% 100%;
+            //background-size: 100% 100%;
+          }
+          .netSw-green-icon {
+            background-color: #0eff0e;
+          }
+          .netSw-red-icon {
+            background-color: #dc143c;
+          }
+          .netSw-num {
+            color: #00ffff;
+          }
+        }
+      }
+    }
+  }
+  /*PBX*/
+  #PBX-prof {
+    #PBX-info {
+      ul {
+        list-style: none;
+        float: left;
+        margin-right: 120px;
+        li {
+          span {
+            width: 50px;
+            float: left;
+            text-align: justify;
+            &:after {
+              display: inline-block;
+              width: 100%;
+              content: '';
+            }
+          }
+          i {
+            font-style: normal;
+            padding-left: 10px;
+          }
+        }
+      }
+      #PBX-ul2 {
+        li {
+          i {
+            color: #00ffff;
+          }
+        }
+      }
+      #PBX-use-rate {
+        float: left;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 110px !important;
+        display: flex;
+        #PBX-ratio-chart {
+          width: 70px !important;
+          height: 70px !important;
+          .el-progress-circle {
+            width: 100% !important;
+            height: 100% !important;
+            svg {
+              path{
+                &:first-child {
+                  stroke: #000000;
+                  stroke-width: 7;
+                }
+                &:last-child {
+                  stroke: #fff100;
+                  stroke-width: 7;
+                }
+              }
+            }
+          }
+          .el-progress__text {
+            color: #fff100;
+          }
+        }
+        span {
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .PBX-port {
+    #PBX-port-info {
+      #PBX-port-ul {
+        list-style: none;
+        .PBX-detail {
+          padding: 5px 0;
+          .PBX-status-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+            background-color: #0eff0e;
+            border: 1px solid #ffffff;
+          }
+        }
+      }
+    }
+  }
+  /*DVRecorder*/
+  #DVR-prof {
+    #DVR-info {
+      ul {
+        list-style: none;
+        float: left;
+        margin-right: 120px;
+        li {
+          span {
+            width: 50px;
+            float: left;
+            text-align: justify;
+            &:after {
+              display: inline-block;
+              width: 100%;
+              content: '';
+            }
+          }
+          i {
+            font-style: normal;
+            padding-left: 10px;
+          }
+        }
+      }
+      #DVR-ul2 {
+        li {
+          i {
+            color: #00ffff;
+          }
+          &:nth-child(2) {
+            i {
+              color: #fff100;
+            }
+          }
+        }
+      }
+      #DVR-use-rate {
+        float: left;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 110px !important;
+        display: flex;
+        #DVR-ratio-chart {
+          width: 70px !important;
+          height: 70px !important;
+          .el-progress-circle {
+            width: 100% !important;
+            height: 100% !important;
+            svg {
+              path{
+                &:first-child {
+                  stroke: #000000;
+                  stroke-width: 7;
+                }
+                &:last-child {
+                  stroke: #fff100;
+                  stroke-width: 7;
+                }
+              }
+            }
+          }
+          .el-progress__text {
+            color: #fff100;
+          }
+        }
+        span {
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .DVR-serial {
+    #DVR-detail {
+      list-style: none;
+      .DVR-detail-item {
+        padding: 5px 10px;
+        border-bottom: 1px solid #434343;
+        .DVR-IPAddress {
+          color: #00ffff;
+        }
+        .DVR-status {
+          color: #00ff02;
+        }
+      }
+    }
+  }
+  /*brodSys-prof*/
+  #brodSys-prof {
+    ul {
+      list-style: none;
+      float: left;
+      margin-right: 120px;
+      li {
+        span {
+          width: 50px;
+          float: left;
+          text-align: justify;
+          &:after {
+            display: inline-block;
+            width: 100%;
+            content: '';
+          }
+        }
+        i {
+          font-style: normal;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+  /*weather*/
+  #weather-prof {
+    #weather-info {
+      ul {
+        list-style: none;
+        float: left;
+        //margin-right: 50px;
+        width: 100%;
+        li {
+          float: left;
+          width: 50%;
+          span {
+            width: 61px;
+            float: left;
+            text-align: justify;
+            &:after {
+              display: inline-block;
+              width: 100%;
+              content: '';
+            }
+          }
+          i {
+            font-style: normal;
+            padding-left: 10px;
+          }
+        }
+      }
+      #weather-ul2 {
+        li {
+          &:nth-child(6) {
+            i {
+              color: #5245ff;
+            }
+          }
+          &:nth-child(7) {
+            i {
+              color: #fff100;
+            }
+          }
+          &:nth-child(-n+10):nth-child(n+8) {
+            i {
+              color: #00ffff;
+            }
+          }
+        }
+      }
+    }
+  }
+  /*userManage*/
+  #uMag-sec {
+    #uMag-title {
+
+    }
+  }
+}
