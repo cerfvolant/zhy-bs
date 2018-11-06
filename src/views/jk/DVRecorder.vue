@@ -63,97 +63,159 @@
             DVRStatus: '在线'
           },
           {
-            DVRNum: '02'
+            DVRNum: '02',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
             DVRNum: '03',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '04'
+            DVRNum: '04',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '05'
+            DVRNum: '05',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
             DVRNum: '06',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '07'
+            DVRNum: '07',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '08'
+            DVRNum: '08',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
             DVRNum: '09',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '10'
+            DVRNum: '10',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '11'
+            DVRNum: '11',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
             DVRNum: '12',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '13'
+            DVRNum: '13',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '14'
+            DVRNum: '14',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
             DVRNum: '15',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '16'
+            DVRNum: '16',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '17'
+            DVRNum: '17',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
             DVRNum: '18',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '19'
+            DVRNum: '19',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '20'
+            DVRNum: '20',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
             DVRNum: '21',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '22'
+            DVRNum: '22',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '23'
+            DVRNum: '23',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
             DVRNum: '24',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '25'
+            DVRNum: '25',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '26'
+            DVRNum: '26',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
             DVRNum: '27',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '28'
+            DVRNum: '28',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '29'
+            DVRNum: '29',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
             DVRNum: '30',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '31'
+            DVRNum: '31',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           },
           {
-            DVRNum: '32'
+            DVRNum: '32',
+            DVRIPAddress: '255.255.255.255',
+            DVRStatus: '在线'
           }
         ]
       }

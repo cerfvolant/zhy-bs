@@ -72,7 +72,7 @@ let routes = [
         asideIcon: 'wljhj'
       },
       {
-        path: 'jk/PBX',
+        path: '/jk/PBX',
         component: PBX,
         name: '语音交换机',
         asideIcon: 'PBXLogo'

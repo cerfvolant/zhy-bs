@@ -28,8 +28,8 @@
         <svg-icon class="svg-logo" icon-class="portLogo"></svg-icon>
         <span>SIP中继接口-{{item.PBXPortNum}}</span>
       </div>
-      <div class="section-info" id="PBX-port-info">
-        <ul id="PBX-port-ul">
+      <div class="section-info PBX-port-info">
+        <ul class="PBX-port-ul">
           <li class="PBX-detail">IP:<span>{{item.PBXIPAddress}}</span></li>
           <li class="PBX-detail">状态：
             <svg-icon class="PBX-status-icon" :icon-class="item.PBXStatus"></svg-icon>

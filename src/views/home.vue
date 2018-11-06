@@ -383,7 +383,7 @@ export default {
           xAxisIndex: 1,
           barGap: '-100%',
           data: [134],
-          barWidth: 12,  //===>> 温度计里面的第二个条宽
+          barWidth: 14,  //===>> 温度计里面的第二个条宽
           itemStyle: {
             normal: {
               color: '#ffffff',

@@ -83,8 +83,11 @@
   .content .home-section #senser-block {
     height: 300px;
     position: relative; }
+    .content .home-section #senser-block #batcher {
+      top: -27%; }
     .content .home-section #senser-block #batcher2 {
-      right: 0; }
+      right: 0;
+      top: 2%; }
   .content .home-section #intellPDU-Title .svg-PDU {
     font-size: 33px;
     margin-top: 6px; }
@@ -412,18 +415,16 @@
     .content #PBX-prof #PBX-info #PBX-use-rate span {
       display: block;
       text-align: center; }
-  .content .PBX-port #PBX-port-info #PBX-port-ul {
+  .content .PBX-port .PBX-port-info .PBX-port-ul {
     list-style: none; }
-    .content .PBX-port #PBX-port-info #PBX-port-ul .PBX-detail {
+    .content .PBX-port .PBX-port-info .PBX-port-ul .PBX-detail {
       padding: 5px 0; }
-      .content .PBX-port #PBX-port-info #PBX-port-ul .PBX-detail .PBX-status-icon {
+      .content .PBX-port .PBX-port-info .PBX-port-ul .PBX-detail .PBX-status-icon {
         width: 50px;
         height: 50px;
         border-radius: 50%;
         display: block;
-        margin: 0 auto;
-        background-color: #0eff0e;
-        border: 1px solid #ffffff; }
+        margin: 0 auto; }
   .content #DVR-prof #DVR-info ul {
     list-style: none;
     float: left;

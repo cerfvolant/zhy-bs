@@ -7,11 +7,11 @@
       </div>
       <div class="section-info clearfix" id="brodSys-info">
         <ul>
-          <li class="clearfix"><span>品牌</span>：<i></i></li>
-          <li class="clearfix"><span>型号</span>：<i></i></li>
-          <li class="clearfix"><span>序列号</span>：<i></i></li>
-          <li class="clearfix"><span>安装时间</span>：<i></i></li>
-          <li class="clearfix"><span>电流</span>：<i></i></li>
+          <li class="clearfix"><span>品牌</span>：<i>ZIZTELZEST</i></li>
+          <li class="clearfix"><span>型号</span>：<i>PAGA</i></li>
+          <li class="clearfix"><span>序列号</span>：<i>123456789</i></li>
+          <li class="clearfix"><span>安装时间</span>：<i>2018.11.5-18:00:00</i></li>
+          <li class="clearfix"><span>电流</span>：<i>0.9A</i></li>
         </ul>
       </div>
     </el-col>
