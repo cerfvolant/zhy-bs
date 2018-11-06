@@ -8,8 +8,8 @@
       <div class="section-info" id="netSw-info">
         <ul id="netSw-ul">
           <li v-for="item in netSwProf">{{item.profItem}}：<span>{{item.profParam}}</span> {{item.unit}}</li>
-          <svg-icon icon-class="netSwitch-jk-big"></svg-icon>
-          <svg-icon icon-class="netSwitch-jk-small"></svg-icon>
+          <!--<svg-icon icon-class="netSwitch-jk-big"></svg-icon>-->
+          <!--<svg-icon icon-class="netSwitch-jk-small"></svg-icon>-->
         </ul>
       </div>
     </el-col>
@@ -58,92 +58,92 @@
             unit: 'A'
           }
         ],
-        netSwPort: [
-          {
-            netSwPortNum: '01',
-            netSwIPAddress:'225.225.225.225',
-            netSwStatusIcon: 'netSw-green-icon',
-            netSwInflux: '1024',
-            netSwEfflux: '1024'
-          },
-          {
-            netSwPortNum: '02',
-            netSwStatusIcon: 'netSw-red-icon',
-          },
-          {
-            netSwPortNum: '03',
-            netSwStatusIcon: 'netSw-red-icon',
-          },
-          {
-            netSwPortNum: '04'
-          },
-          {
-            netSwPortNum: '05'
-          },
-          {
-            netSwPortNum: '06'
-          },
-          {
-            netSwPortNum: '07'
-          },
-          {
-            netSwPortNum: '08'
-          },
-          {
-            netSwPortNum: '09'
-          },
-          {
-            netSwPortNum: '10',
-          },
-          {
-            netSwPortNum: '11'
-          },
-          {
-            netSwPortNum: '12'
-          },
-          {
-            netSwPortNum: '13'
-          },
-          {
-            netSwPortNum: '14'
-          },
-          {
-            netSwPortNum: '15'
-          },
-          {
-            netSwPortNum: '16'
-          },
-          {
-            netSwPortNum: '17'
-          },
-          {
-            netSwPortNum: '18'
-          },
-          {
-            netSwPortNum: '19',
-          },
-          {
-            netSwPortNum: '20'
-          },
-          {
-            netSwPortNum: '21'
-          },
-          {
-            netSwPortNum: '22'
-          },
-          {
-            netSwPortNum: '23'
-          },
-          {
-            netSwPortNum: '24'
-          },
-          {
-            netSwPortNum: '25'
-          },
-          {
-            netSwPortNum: '26'
-          },
-        ]
+//        netSwPort: [
+//          {
+//            netSwPortNum: '01',
+//            netSwIPAddress:'225.225.225.225',
+//            netSwStatusIcon: 'netSw-green-icon',
+//            netSwInflux: '1024',
+//            netSwEfflux: '1024'
+//          },
+//          {
+//            netSwPortNum: '02',
+//            netSwStatusIcon: 'netSw-red-icon',
+//          },
+//          {
+//            netSwPortNum: '03',
+//            netSwStatusIcon: 'netSw-red-icon',
+//          },
+//          {
+//            netSwPortNum: '04'
+//          },
+//          {
+//            netSwPortNum: '05'
+//          },
+//          {
+//            netSwPortNum: '06'
+//          },
+//          {
+//            netSwPortNum: '07'
+//          },
+//          {
+//            netSwPortNum: '08'
+//          },
+//          {
+//            netSwPortNum: '09'
+//          },
+//          {
+//            netSwPortNum: '10',
+//          },
+//          {
+//            netSwPortNum: '11'
+//          },
+//          {
+//            netSwPortNum: '12'
+//          },
+//          {
+//            netSwPortNum: '13'
+//          },
+//          {
+//            netSwPortNum: '14'
+//          },
+//          {
+//            netSwPortNum: '15'
+//          },
+//          {
+//            netSwPortNum: '16'
+//          },
+//          {
+//            netSwPortNum: '17'
+//          },
+//          {
+//            netSwPortNum: '18'
+//          },
+//          {
+//            netSwPortNum: '19',
+//          },
+//          {
+//            netSwPortNum: '20'
+//          },
+//          {
+//            netSwPortNum: '21'
+//          },
+//          {
+//            netSwPortNum: '22'
+//          },
+//          {
+//            netSwPortNum: '23'
+//          },
+//          {
+//            netSwPortNum: '24'
+//          },
+//          {
+//            netSwPortNum: '25'
+//          },
+//          {
+//            netSwPortNum: '26'
+//          },
+//        ]
       }
     }
   }

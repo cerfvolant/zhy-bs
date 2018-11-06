@@ -39,7 +39,7 @@
         intellPDUProgress: [
           {
             profTitle: 'A相电压：',
-            progPercentage: '52',
+            progPercentage: 52,
             progressBgColor: '#00ffff',
             progressValue: '250',
             progValueColor:'voltage-value-color',
@@ -47,7 +47,7 @@
           },
           {
             profTitle: 'A相电流：',
-            progPercentage: '40',
+            progPercentage: 40,
             progressBgColor: '#ffff00',
             progressValue: '2.0',
             progValueColor:'current-value-color',
@@ -55,7 +55,7 @@
           },
           {
             profTitle: 'A相功率：',
-            progPercentage: '52',
+            progPercentage: 52,
             progressBgColor: '#5245ff',
             progressValue: '2.0',
             progValueColor:'power-value-color',
@@ -63,7 +63,7 @@
           },
           {
             profTitle: '频率：',
-            progPercentage: '40',
+            progPercentage: 40,
             progressBgColor: '#00ff7e',
             progressValue: '60',
             progValueColor:'frequency-value-color',
@@ -71,7 +71,7 @@
           },
           {
             profTitle: '电能：',
-            progPercentage: '57',
+            progPercentage: 57,
             progressBgColor: '#ff7815',
             progressValue: '250',
             progValueColor:'eleEnergy-value-color',

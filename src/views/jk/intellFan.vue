@@ -2,19 +2,19 @@
   <div id="intellFan">
     <el-col class="section intellFan-section" :span="7" v-for="item in intellFanSec">
       <div class="section-title">
-        <svg-icon class="svg-logo" icon-class="intellFanLogo" />
+        <svg-icon class="svg-logo" icon-class="intellFanLogo"/>
         <span>智能风扇-{{item.intellFanNum}}</span>
       </div>
-      <div class="section-info" id="intellFan-info">
-        <svg-icon class="intellFan-svg" icon-class="fanDynamic" />
-        <div id="intellFan-calc">
-          <span v-on:click="minus" id="count-delete" class="count el-icon-minus"></span>
-          <span id="count-plus" class="count el-icon-plus"></span>
-          <div id="intellFan-dot" ref="dotBox">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+      <div class="section-info intellFan-info">
+        <svg-icon class="intellFan-svg" icon-class="fanDynamic"/>
+        <div class="intellFan-calc">
+          <span v-on:click="minusBox(item)" class="count count-minus el-icon-minus"></span>
+          <span v-on:click="addBox(item)" class="count count-add el-icon-plus"></span>
+          <div class="intellFan-dot">
+            <span v-bind:class="{ active : item.count >= 1}"></span>
+            <span v-bind:class="{ active : item.count >= 2}"></span>
+            <span v-bind:class="{ active : item.count >= 3}"></span>
+            <span v-bind:class="{ active : item.count >= 4}"></span>
           </div>
         </div>
         <div id="intellFan-detail">
@@ -48,8 +48,15 @@
       }
     },
     methods: {
-      minus: function (e) {
-        this.$refs.dotBox.style.backgroundColor = "#fff100";
+      minusBox: function (item) {
+        if (item.count >= 1) {
+          item.count = item.count - 1
+        }
+      },
+      addBox: function (item) {
+        if (item.count <= 3) {
+          item.count = item.count + 1
+        }
       }
     }
   }

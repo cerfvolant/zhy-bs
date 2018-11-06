@@ -43,6 +43,11 @@
   font-size: 14px;
   padding: 0 8px 0 10px; }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg) translateX(0px); }
+  to {
+    transform: rotate(360deg) translateX(0px); } }
 .content {
   position: absolute;
   top: 50px;
@@ -75,6 +80,11 @@
         padding: 0 8px 0 10px; }
     .content .section .section-info {
       padding: 15px; }
+  .content .home-section #senser-block {
+    height: 300px;
+    position: relative; }
+    .content .home-section #senser-block #batcher2 {
+      right: 0; }
   .content .home-section #intellPDU-Title .svg-PDU {
     font-size: 33px;
     margin-top: 6px; }
@@ -131,9 +141,13 @@
     .content .home-section #intellPDU-info #pdu-right .pdu-port-utilization span {
       display: block; }
   .content .home-section #yg-sec {
-    text-align: center; }
+    text-align: center;
+    height: 300px;
+    display: table-cell;
+    vertical-align: middle;
+    width: inherit; }
     .content .home-section #yg-sec .yg-icon {
-      font-size: 90px; }
+      font-size: 100px; }
     .content .home-section #yg-sec p {
       color: #00bd0b;
       margin: 15px 0;
@@ -150,6 +164,12 @@
       margin: 10px 0; }
     .content .home-section #fan-sec #fan-item p {
       color: #00ffff; }
+    .content .home-section #fan-sec #fan-item:first-of-type .fan-logo {
+      animation: spin .95s linear infinite forwards !important; }
+    .content .home-section #fan-sec #fan-item:nth-of-type(2) .fan-logo {
+      animation: spin 1s linear infinite forwards !important; }
+    .content .home-section #fan-sec #fan-item:nth-of-type(3) .fan-logo {
+      animation: spin 2s linear infinite forwards !important; }
   .content .home-section #tip-title #tip-title-left {
     padding: 0; }
     .content .home-section #tip-title #tip-title-left #svg-logo {
@@ -158,9 +178,31 @@
     display: flex;
     justify-content: space-between;
     padding: 5px 0; }
+@keyframes shakeSign {
+  0% {
+    transform: rotate(0deg); }
+  45% {
+    transform: rotate(0deg); }
+  47.5% {
+    transform: rotate(-2deg); }
+  55% {
+    transform: rotate(2deg); }
+  57.5% {
+    transform: rotate(-2deg); }
+  60% {
+    transform: rotate(2deg); }
+  62.5% {
+    transform: rotate(-2deg); }
+  65% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(0deg); } }
     .content .home-section #warning-info ul li .warning-left .tip-icon {
       color: #fff100;
-      font-size: 14px; }
+      font-size: 14px;
+      animation: shakeSign 3.5s infinite;
+      transform-origin: 50% 100%;
+      transition: all .2s ease-in-out; }
     .content .home-section #warning-info ul li .warning-left span {
       padding-left: 3px; }
     .content .home-section #warning-info ul li .warning-right span {
@@ -252,50 +294,59 @@
         color: #00ffff; }
   .content .intellFan-section {
     float: left; }
-    .content .intellFan-section #intellFan-info {
+    .content .intellFan-section .intellFan-info {
       padding: 20px 0 50px; }
-      .content .intellFan-section #intellFan-info .intellFan-svg {
+      .content .intellFan-section .intellFan-info .intellFan-svg {
         width: 150px;
         height: 150px;
         display: block;
         margin: 50px auto; }
-      .content .intellFan-section #intellFan-info #intellFan-calc {
-        position: relative;
+      .content .intellFan-section .intellFan-info .intellFan-calc {
         width: 45%;
-        margin: 0 auto; }
-        .content .intellFan-section #intellFan-info #intellFan-calc .count {
+        margin: 0 auto;
+        position: relative; }
+        .content .intellFan-section .intellFan-info .intellFan-calc .count {
           position: absolute;
-          width: 35px;
-          height: 18px;
-          line-height: 18px;
+          width: 40px;
+          height: 20px;
+          line-height: 20px;
           background-color: #00ffff;
           border-radius: 14px;
-          font-size: 14px;
           color: #000000;
           font-weight: 800;
-          text-align: center; }
-        .content .intellFan-section #intellFan-info #intellFan-calc #count-delete {
-          left: -43px; }
-        .content .intellFan-section #intellFan-info #intellFan-calc #count-plus {
-          right: -43px; }
-        .content .intellFan-section #intellFan-info #intellFan-calc #intellFan-dot {
-          display: inline-flex;
+          text-align: center;
+          font-size: 14px;
+          cursor: pointer; }
+        .content .intellFan-section .intellFan-info .intellFan-calc .count-minus {
+          left: -45px; }
+        .content .intellFan-section .intellFan-info .intellFan-calc .count-add {
+          right: -45px; }
+        .content .intellFan-section .intellFan-info .intellFan-calc .intellFan-dot {
           width: 100%;
+          display: inline-flex;
           justify-content: space-around; }
-          .content .intellFan-section #intellFan-info #intellFan-calc #intellFan-dot span {
+          .content .intellFan-section .intellFan-info .intellFan-calc .intellFan-dot span {
             width: 20px;
             height: 20px;
-            display: inline-block;
             background-color: #000000;
+            display: inline-block;
             border-radius: 50%; }
-      .content .intellFan-section #intellFan-info #intellFan-detail {
+          .content .intellFan-section .intellFan-info .intellFan-calc .intellFan-dot .active {
+            background-color: #fff100; }
+      .content .intellFan-section .intellFan-info #intellFan-detail {
         text-align: center; }
-        .content .intellFan-section #intellFan-info #intellFan-detail span {
+        .content .intellFan-section .intellFan-info #intellFan-detail span {
           display: block;
           font-size: 14px; }
-          .content .intellFan-section #intellFan-info #intellFan-detail span:first-child {
+          .content .intellFan-section .intellFan-info #intellFan-detail span:first-child {
             color: #fff100;
             padding: 10px 0; }
+    .content .intellFan-section:first-of-type .intellFan-info .intellFan-svg {
+      animation: spin .95s linear infinite forwards !important; }
+    .content .intellFan-section:nth-of-type(2) .intellFan-info .intellFan-svg {
+      animation: spin 1s linear infinite forwards !important; }
+    .content .intellFan-section:nth-of-type(3) .intellFan-info .intellFan-svg {
+      animation: spin 2s linear infinite forwards !important; }
   .content #netSw-prof #netSw-info #netSw-ul {
     list-style: none;
     display: inline-flex;

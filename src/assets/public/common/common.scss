@@ -57,6 +57,15 @@
   }
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg) translateX(0px);
+  }
+  to {
+    transform: rotate(360deg) translateX(0px);
+  }
+}
+
 .content {
   position: absolute;
   top: 50px;
@@ -87,6 +96,13 @@
     .section-info {
       //padding-left: 20px;
       //padding-right: 20px;
+    }
+    #senser-block {
+      height: 300px;
+      position: relative;
+      #batcher2 {
+        right: 0;
+      }
     }
     #intellPDU-Title {
       .svg-PDU {
@@ -188,8 +204,12 @@
     }
     #yg-sec {
       text-align: center;
+      height: 300px;
+      display: table-cell;
+      vertical-align: middle;
+      width: inherit;
       .yg-icon {
-        font-size: 90px;
+        font-size: 100px;
       }
       p {
         color: #00bd0b;
@@ -216,6 +236,21 @@
         p {
           color: #00ffff;
         }
+        &:first-of-type {
+          .fan-logo {
+            animation: spin .95s linear infinite forwards !important;
+          }
+        }
+        &:nth-of-type(2) {
+          .fan-logo {
+            animation: spin 1s linear infinite forwards !important;
+          }
+        }
+        &:nth-of-type(3) {
+          .fan-logo {
+            animation: spin 2s linear infinite forwards !important;
+          }
+        }
       }
     }
     #tip-title {
@@ -233,9 +268,41 @@
           justify-content: space-between;
           padding: 5px 0;
           .warning-left {
+            @keyframes shakeSign {
+              0% {
+                transform: rotate(0deg);
+              }
+              45% {
+                transform: rotate(0deg);
+              }
+              47.5% {
+                transform: rotate(-2deg);
+              }
+              55% {
+                transform: rotate(2deg);
+              }
+              57.5% {
+                transform: rotate(-2deg);
+              }
+              60% {
+                transform: rotate(2deg);
+              }
+              62.5%  {
+                transform: rotate(-2deg);
+              }
+              65% {
+                transform: rotate(0deg);
+              }
+              100% {
+                transform: rotate(0deg);
+              }
+            }
             .tip-icon {
               color: #fff100;
               font-size: 14px;
+              animation: shakeSign 3.5s infinite;
+              transform-origin: 50% 100%;
+              transition: all .2s ease-in-out;
             }
             span {
               padding-left: 3px;
@@ -381,7 +448,7 @@
   /*intellFan*/
   .intellFan-section {
     float: left;
-    #intellFan-info {
+    .intellFan-info {
       padding: 20px 0 50px;
       .intellFan-svg {
         width: 150px;
@@ -389,39 +456,42 @@
         display: block;
         margin: 50px auto;
       }
-      #intellFan-calc {
-        position: relative;
+      .intellFan-calc {
         width: 45%;
         margin: 0 auto;
+        position: relative;
         .count {
           position: absolute;
-          width: 35px;
-          height: 18px;
-          line-height: 18px;
+          width: 40px;
+          height: 20px;
+          line-height: 20px;
           background-color: #00ffff;
           border-radius: 14px;
-          font-size: 14px;
           color: #000000;
           font-weight: 800;
           text-align: center;
+          font-size: 14px;
+          cursor: pointer;
         }
-        #count-delete {
-          left: -43px;
+        .count-minus {
+          left: -45px;
         }
-        #count-plus {
-          right: -43px;
+        .count-add {
+          right: -45px;
         }
-        #intellFan-dot {
-          display: inline-flex;
+        .intellFan-dot {
           width: 100%;
+          display: inline-flex;
           justify-content: space-around;
           span {
             width: 20px;
             height: 20px;
-            display:inline-block;
             background-color: #000000;
-            //background-color: #fff100;
+            display: inline-block;
             border-radius: 50%;
+          }
+          .active {
+            background-color: #fff100;
           }
         }
       }
@@ -429,11 +499,32 @@
         text-align: center;
         span {
           display: block;
-          font-size: 14px;
+          font-size:14px;
           &:first-child {
             color: #fff100;
             padding: 10px 0;
           }
+        }
+      }
+    }
+    &:first-of-type {
+      .intellFan-info {
+        .intellFan-svg {
+          animation: spin .95s linear infinite forwards !important;
+        }
+      }
+    }
+    &:nth-of-type(2) {
+      .intellFan-info {
+        .intellFan-svg {
+          animation: spin 1s linear infinite forwards !important;
+        }
+      }
+    }
+    &:nth-of-type(3) {
+      .intellFan-info {
+        .intellFan-svg {
+          animation: spin 2s linear infinite forwards !important;
         }
       }
     }

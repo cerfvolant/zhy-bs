@@ -118,6 +118,7 @@
       .tab-item {
         font-size: 14px;
         cursor: pointer;
+        @include flex-vertical;
         .tab-svg-logo {
           font-size: 17px;
         }
