@@ -296,7 +296,7 @@ export default {
           max: 50,
         }, {
           type: 'category',
-          data: ['', '', '', '', '', '', '', '', '', '', '°C'],
+//          data: ['', '', '', '', '', '', '', '', '', '', '°C'],
           position: 'left',
           offset: -80,
           axisLabel: {
@@ -425,7 +425,7 @@ export default {
           hoverAnimation: false,
           data: [0],
           xAxisIndex: 1,
-          symbolSize: 30,   //====>>温度计的第二个圆形
+          symbolSize: 25,   //====>>温度计的第二个圆形
           itemStyle: {
             normal: {
               color: '#ffffff',
@@ -575,7 +575,7 @@ export default {
           max: 50,
         }, {
           type: 'category',
-          data: ['', '', '', '', '', '', '', '', '', '', '°C'],
+//          data: ['', '', '', '', '', '', '', '', '', '', '°C'],
           position: 'left',
           offset: -80,
           axisLabel: {
@@ -704,7 +704,7 @@ export default {
           hoverAnimation: false,
           data: [0],
           xAxisIndex: 1,
-          symbolSize: 30,   //====>>温度计的第二个圆形
+          symbolSize: 25,   //====>>温度计的第二个圆形
           itemStyle: {
             normal: {
               color: '#ffffff',
