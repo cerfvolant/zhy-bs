@@ -59,7 +59,6 @@
   /*detactor*/
   /*intellPDU*/
   /*intellFan*/
-  /*netSwitch*/
   /*PBX*/
   /*DVRecorder*/
   /*brodSys-prof*/
@@ -350,31 +349,6 @@
       animation: spin 1s linear infinite forwards !important; }
     .content .intellFan-section:nth-of-type(3) .intellFan-info .intellFan-svg {
       animation: spin 2s linear infinite forwards !important; }
-  .content #netSw-prof #netSw-info #netSw-ul {
-    list-style: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%; }
-    .content #netSw-prof #netSw-info #netSw-ul li:last-child span {
-      color: #00ffff; }
-  .content .netSw-port #netSw-port-info #netSw-port-ul {
-    list-style: none; }
-    .content .netSw-port #netSw-port-info #netSw-port-ul .netSw-detail {
-      padding: 4px 0; }
-      .content .netSw-port #netSw-port-info #netSw-port-ul .netSw-detail .netSw-status-icon {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        display: inline-block;
-        background-color: #0eff0e;
-        border: 1px solid #ffffff; }
-      .content .netSw-port #netSw-port-info #netSw-port-ul .netSw-detail .netSw-green-icon {
-        background-color: #0eff0e; }
-      .content .netSw-port #netSw-port-info #netSw-port-ul .netSw-detail .netSw-red-icon {
-        background-color: #dc143c; }
-      .content .netSw-port #netSw-port-info #netSw-port-ul .netSw-detail .netSw-num {
-        color: #00ffff; }
   .content #PBX-prof #PBX-info ul {
     list-style: none;
     float: left;

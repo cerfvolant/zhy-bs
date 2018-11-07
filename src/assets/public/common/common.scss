@@ -533,57 +533,6 @@
       }
     }
   }
-  /*netSwitch*/
-  #netSw-prof {
-    #netSw-info {
-      #netSw-ul {
-        list-style: none;
-        display: inline-flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        li {
-          //display: inline-block;
-          //width: 20%;
-          &:last-child {
-            span {
-              color: #00ffff;
-            }
-          }
-        }
-      }
-    }
-  }
-  .netSw-port {
-    #netSw-port-info {
-      #netSw-port-ul {
-        list-style: none;
-        .netSw-detail {
-          padding: 4px 0;
-          .netSw-status-icon {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            display: inline-block;
-            background-color: #0eff0e;
-            border: 1px solid #ffffff;
-            //background: url("../../static/img/user-avatar.jpg") no-repeat;
-            //background-position: 100% 100%;
-            //background-size: 100% 100%;
-          }
-          .netSw-green-icon {
-            background-color: #0eff0e;
-          }
-          .netSw-red-icon {
-            background-color: #dc143c;
-          }
-          .netSw-num {
-            color: #00ffff;
-          }
-        }
-      }
-    }
-  }
   /*PBX*/
   #PBX-prof {
     #PBX-info {

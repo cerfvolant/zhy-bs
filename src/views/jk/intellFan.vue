@@ -34,15 +34,15 @@
         intellFanSec: [
           {
             intellFanNum: '01',
-            count: 0,
+            count: 3,
           },
           {
             intellFanNum: '02',
-            count: 0,
+            count: 2,
           },
           {
             intellFanNum: '03',
-            count: 0,
+            count: 1,
           }
         ],
       }
