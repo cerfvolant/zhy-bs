@@ -21,11 +21,14 @@
         <div id="netSw-tab">
           <ul id="netSw-tab-ul">
             <li
-              @click.native="isTabNative(index)"
+              v-for="(item,index) in netSwTab"
               :class="item.doTabIconActive?'tabIconChange':'tabIconNotChange'"
-              class="netSw-tab-li"
-              v-for="item in netSwTab">
-              <svg-icon class="netSw-tab-icon" :icon-class="item.netSwTabIcon"></svg-icon>
+              class="netSw-tab-li">
+              <svg-icon
+                @click.native="isTabNative(index)"
+                class="netSw-tab-icon"
+                :icon-class="item.netSwTabIcon">
+              </svg-icon>
               <!--<svg-icon-->
                 <!--@click.native="isTabNative(index)"-->
                 <!--:class="item.doTabIconActive?'tabIconChange':'tabIconNotChange'"-->
@@ -364,11 +367,11 @@
         align-items: center;
         .netSw-tab-li {
           position: relative;
+          cursor:pointer;
           &:after {
             content: '';
             width: 100%;
             height: 3px;
-            background-color: #00ffff;
             display: inline-block;
             position: absolute;
             bottom: 16px;
@@ -386,30 +389,12 @@
               height: 100px;
             }
           }
-          .tabIconChange {
-            color: #00ffff;
-          }
-        }
-      }
-      #netSw-tab-box {
-        /*width: 50%;*/
-        /*margin: 0 auto;*/
-        /*display: flex;*/
-        /*justify-content:space-around;*/
-        /*align-items: center;*/
-        /*position: relative;*/
-        .netSw-tab-icon {
-          cursor:pointer;
-
-          /*&:nth-child(-n+3):nth-child(n) {*/
-            /*font-size: 100px;*/
-          /*}*/
-          /*&:last-of-type {*/
-            /*font-size: 45px;*/
-          /*}*/
         }
         .tabIconChange {
           color: #00ffff;
+          &:after {
+            background-color: #00ffff;
+          }
         }
       }
     }

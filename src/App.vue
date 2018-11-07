@@ -1,19 +1,20 @@
 <template>
   <div id="app">
     <router-view></router-view>
-    <navHeader></navHeader>
+    <span></span>
+    <!--navHeader></navHeader-->
   </div>
 </template>
 
 <script>
-import navHeader from './views/common/navHeader.vue';
+//import navHeader from './views/common/navHeader.vue';
 export default {
   name: 'app',
   data () {
     return {}
   },
   components: {
-    navHeader
+    //navHeader
   }
 }
 </script>

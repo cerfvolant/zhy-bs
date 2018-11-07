@@ -1,7 +1,7 @@
 <template>
   <div id="xtgl">
     <el-menu class="aside-menu" :default-active="$route.path" router active-text-color="#00ffff" text-color="#ffffff">
-      <template v-for="(item,index) in $router.options.routes" v-if="$route.path.indexOf(item.path)!=-1">
+      <template v-for="(item,index) in $router.options.routes[1].children" v-if="$route.path.indexOf(item.path)!=-1">
         <el-menu-item class="aside-item clearfix" v-for="child in item.children" :index="child.path" :key="child.path">
           <svg-icon class="aside-icon" :icon-class="child.asideIcon"></svg-icon>
           <span class="aside-name">{{child.name}}</span>

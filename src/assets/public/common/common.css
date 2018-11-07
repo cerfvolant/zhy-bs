@@ -209,16 +209,26 @@
       padding-left: 3px; }
     .content .home-section #warning-info ul li .warning-right span {
       color: #ff0048; }
+  .content #front-sensor .senser-block, .content #back-sensor .senser-block {
+    position: relative; }
+    .content #front-sensor .senser-block #temp1, .content #front-sensor .senser-block #temp2, .content #front-sensor .senser-block #temp3, .content #front-sensor .senser-block #temp4, .content #front-sensor .senser-block #temp5, .content #front-sensor .senser-block #temp6, .content #back-sensor .senser-block #temp1, .content #back-sensor .senser-block #temp2, .content #back-sensor .senser-block #temp3, .content #back-sensor .senser-block #temp4, .content #back-sensor .senser-block #temp5, .content #back-sensor .senser-block #temp6 {
+      top: -390%; }
+    .content #front-sensor .senser-block #hum1, .content #front-sensor .senser-block #hum2, .content #front-sensor .senser-block #hum3, .content #front-sensor .senser-block #hum4, .content #front-sensor .senser-block #hum5, .content #front-sensor .senser-block #hum6, .content #back-sensor .senser-block #hum1, .content #back-sensor .senser-block #hum2, .content #back-sensor .senser-block #hum3, .content #back-sensor .senser-block #hum4, .content #back-sensor .senser-block #hum5, .content #back-sensor .senser-block #hum6 {
+      right: 0;
+      top: -390%; }
   .content .sensor-wrap .section {
     height: 200px; }
   .content #sensor-img {
     height: 600px;
     margin: .5% 0;
     position: relative; }
-    .content #sensor-img #sensor-jigui {
+    .content #sensor-img .sensor-jigui {
+      font-size: 600px;
+      margin: 0 auto;
       position: absolute;
-      width: 100%;
-      height: 100%; }
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%); }
     .content #sensor-img #sensor-wsd {
       position: absolute;
       width: 50px;

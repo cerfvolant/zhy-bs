@@ -3,7 +3,7 @@
     <el-row class="nav clearfix">
       <!--导航左：logo-->
       <el-col class="nav-left" :span="7">
-        <img src="../../assets/static/img/zhy-logo.png" alt="">
+        <svg-icon class="svg-logo" icon-class="zhyLogo"></svg-icon>
         <span class="nav-left-name">中国海洋石油</span>
         <span class="nav-left-info">海上环境监控综合系统</span>
       </el-col>
@@ -13,7 +13,7 @@
           <svg-icon class="tab-svg-logo" :icon-class="item.tabIcon"></svg-icon>
           <span>{{item.tabName}}</span>
         </div>
-        <el-badge class="tab-warning" :value="200" :max="99">
+        <el-badge class="tab-warning" :value="200" :max="9">
           <svg-icon icon-class="warning"></svg-icon>
         </el-badge>
         <el-dropdown>
@@ -23,7 +23,7 @@
           </span>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item>设置</el-dropdown-item>
-            <el-dropdown-item divided @click.native="logoutFun">退出登录</el-dropdown-item>
+            <el-dropdown-item divided @click.native="logout">退出登录</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
       </el-col>
@@ -62,7 +62,7 @@
             isTabColorChange: false
           }
         ],
-        sysUserName: '123',
+        sysUserName: '管理员',
       }
     },
     methods: {
@@ -75,6 +75,11 @@
           name: this.navTab[key].navPage
         });
         console.log(123)
+      },
+      logout () {
+        this.$router.push({
+          name: "login"
+        });
       }
     }
   }
@@ -97,10 +102,13 @@
     .nav-left {
       @include flex-vertical;
       justify-content: space-around;
-      >img {
-        width: 30px;
-        height: 30px;
-        /*padding: 0 10px;*/
+      /*>img {*/
+        /*width: 30px;*/
+        /*height: 30px;*/
+        /*!*padding: 0 10px;*!*/
+      /*}*/
+      .svg-logo {
+        font-size: 35px;
       }
       .nav-left-name {
         font-size: 18px;
@@ -121,6 +129,9 @@
         @include flex-vertical;
         .tab-svg-logo {
           font-size: 17px;
+        }
+        span {
+          margin-left: 3px;
         }
       }
       .tabChange {
