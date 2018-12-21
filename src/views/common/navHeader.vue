@@ -13,17 +13,35 @@
           <svg-icon class="tab-svg-logo" :icon-class="item.tabIcon"></svg-icon>
           <span>{{item.tabName}}</span>
         </div>
-        <el-badge class="tab-warning" :value="200" :max="9">
-          <svg-icon icon-class="warning"></svg-icon>
-        </el-badge>
+
+        <el-dropdown>
+          <el-badge class="tab-warning" :value="200" :max="9">
+            <svg-icon icon-class="warning"></svg-icon>
+          </el-badge>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>
+              <svg-icon class="tip-icon" icon-class="tipIcon"></svg-icon>
+              烟感检测到烟雾
+            </el-dropdown-item>
+            <el-dropdown-item>
+              <svg-icon class="tip-icon" icon-class="tipIcon"></svg-icon>
+              温度超过正常水平
+            </el-dropdown-item>
+            <el-dropdown-item>
+              <svg-icon class="tip-icon" icon-class="tipIcon"></svg-icon>
+              温度超过正常水平
+            </el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+
         <el-dropdown>
           <span class="el-dropdown-link userinfo">{{sysUserName}}
             <img class="user-avatar" src="../../assets/static/img/user-avatar.jpg" alt="">
             <i class="el-icon-caret-bottom"></i>
           </span>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>设置</el-dropdown-item>
-            <el-dropdown-item divided @click.native="logout">退出登录</el-dropdown-item>
+            <!--<el-dropdown-item>设置</el-dropdown-item>-->
+            <el-dropdown-item @click.native="logout">退出登录</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
       </el-col>
@@ -140,6 +158,7 @@
       .tab-warning {
         cursor: pointer;
         font-size: 17px;
+        color: #ffffff;
         .el-badge__content {
           height: 14px;
           line-height: 14px;

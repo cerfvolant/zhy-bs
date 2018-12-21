@@ -172,32 +172,32 @@ export default {
       tipDate: '2018/10/15',
       warningItem: [
         {
-          tipTime: '08 : 20',
+          tipTime: '06 : 45',
           tipName: '烟感',
           tipNameStatus: '检测到烟雾'
         },
         {
-          tipTime: '08 : 20',
+          tipTime: '08 : 23',
           tipName: '温度',
           tipNameStatus: '超过正常水平'
         },
         {
-          tipTime: '08 : 20',
+          tipTime: '12 : 20',
           tipName: '烟感',
           tipNameStatus: '检测到烟雾'
         },
         {
-          tipTime: '08 : 20',
+          tipTime: '12 : 22',
           tipName: '温度',
           tipNameStatus: '超过正常水平'
         },
         {
-          tipTime: '08 : 20',
+          tipTime: '13 : 15',
           tipName: '烟感',
           tipNameStatus: '检测到烟雾'
         },
         {
-          tipTime: '08 : 20',
+          tipTime: '15 : 45',
           tipName: '温度',
           tipNameStatus: '超过正常水平'
         }

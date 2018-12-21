@@ -2,7 +2,7 @@
   <div id="weather">
     <el-row :gutter="5">
       <el-col :span="11">
-        <div class="section" id="weather-prof">
+        <div class="section weather-prof">
           <div class="section-title">
             <svg-icon class="svg-logo" icon-class="weather"></svg-icon>
             <span>气象基本参数</span>
@@ -32,22 +32,61 @@
         </div>
       </el-col>
       <el-col :span="13">
-        <div class="section">
-          <div class="section-title">
-            <svg-icon class="svg-logo" icon-class="intellFanLogo"></svg-icon>
-            <span>时段风速</span>
+        <div class="section weather-hour">
+          <div class="section-title weather-title">
+            <el-col class="weather-title-left" :span="11">
+              <svg-icon class="svg-logo" icon-class="intellFanLogo"></svg-icon>
+              <span>时段风速</span>
+            </el-col>
+            <el-col class="weather-title-right" :span="8">
+              <el-date-picker
+                v-model="value2"
+                align="right"
+                type="date"
+                placeholder="选择日期"
+                :picker-options="pickerOptions1">
+              </el-date-picker>
+            </el-col>
           </div>
           <div class="section-info">
             <div id="graph" :style="{width: '100%', height: '300px'}"></div>
           </div>
         </div>
-        <div class="section">
-          <div class="section-title">
-            <svg-icon class="svg-logo" icon-class="intellFanLogo"></svg-icon>
-            <span>2min/10min 平均风速</span>
+        <div class="section weather-hour">
+          <div class="section-title weather-title">
+            <el-col class="weather-title-left" :span="11">
+              <svg-icon class="svg-logo" icon-class="intellFanLogo"></svg-icon>
+              <span>2min/10min 平均风速</span>
+            </el-col>
+            <el-col class="weather-title-right" :span="13">
+            </el-col>
           </div>
+          <!--<el-tabs v-model="activeName" @tab-click="handleClick">-->
+            <!--<el-tab-pane label="2min" name="first">-->
+              <!--<div id="average" :style="{width: '100%', height: '300px'}"></div>-->
+            <!--</el-tab-pane>-->
+            <!--<el-tab-pane label="10min" name="second">-->
+              <!--<div id="average2" :style="{width: '100%', height: '300px'}"></div>-->
+            <!--</el-tab-pane>-->
+          <!--</el-tabs>-->
+          <!--<el-tabs v-model="activeName" @tab-click="handleClick">-->
+            <!--<el-tab-pane v-for="item in avSpeedArr" :label="item.avSpeedName" :name="item.avSpeedSeries">-->
+              <!--<div id="average" :style="{width: '100%', height: '300px'}"></div>-->
+            <!--</el-tab-pane>-->
+          <!--</el-tabs>-->
+          <ul class="avSpeed-tab">
+            <li
+              class="avtabItem"
+              @click="avWindSpTab(index)"
+              :class="item.doTimeTabActive?'timeItemChange':'timeItemNotChange'"
+              v-for="(item,index) in avSpeedArr">
+              {{item.avSpeedName}}
+            </li>
+          </ul>
           <div class="section-info">
-            <div id="average" :style="{width: '100%', height: '300px'}"></div>
+            <!--<div v-show="avSpeed2min" id="average" :style="{width: '100%', height: '300px'}"></div>-->
+            <!--<div v-show="avSpeed10min" id="average2" :style="{width: '100%', height: '300px'}"></div>-->
+            <Chart></Chart>
           </div>
         </div>
       </el-col>
@@ -57,9 +96,11 @@
 
 <script>
   let echarts = require('echarts/lib/echarts');
-  var colors = ['#5793f3', '#d14a61', '#675bba'];
+//  var colors = ['#5793f3', '#d14a61', '#675bba'];
+  import Chart from '../charts/lineChart.vue'
   export default {
     name: 'weather',
+    component: { Chart },
     data() {
       return {
         weatherProf2: [
@@ -108,99 +149,182 @@
             profParam: '0.6',
             unit: 'A'
           }
-        ]
+        ],
+        pickerOptions1: {
+          disabledDate(time) {
+            return time.getTime() > Date.now();
+          },
+          shortcuts: [{
+            text: '今天',
+            onClick(picker) {
+              picker.$emit('pick', new Date());
+            }
+          }, {
+            text: '昨天',
+            onClick(picker) {
+              const date = new Date();
+              date.setTime(date.getTime() - 3600 * 1000 * 24);
+              picker.$emit('pick', date);
+            }
+          }, {
+            text: '一周前',
+            onClick(picker) {
+              const date = new Date();
+              date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
+              picker.$emit('pick', date);
+            }
+          }]
+        },
+        value2: new Date(),
+        activeName: 'first',
+        avSpeedArr: [
+          {
+            avSpeedName:'2min',
+            avSpeedSeries: 'first',
+            doTimeTabActive: true
+          },
+          {
+            avSpeedName:'10min',
+            avSpeedSeries: 'second',
+            doTimeTabActive: false
+          }
+        ],
+        avSpeed2min: true,
+        avSpeed10min: false,
       }
     },
     mounted() {
       this.graphInfo();
       this.campusInfo();
-      this.averageInfo();
+//      this.averageInfo();
+      this.averageInfo2();
     },
     methods: {
       graphInfo() {
         let graph = echarts.init(document.getElementById('graph'));
         graph.setOption({
           title: {
-            text: '未来一周气温变化',
-            subtext: '纯属虚构'
+            text: '24小时风速曲线',
+            subtext: '时段内风速',
+            textStyle: {
+              color: '#ffffff'
+            }
           },
           tooltip: {
             trigger: 'axis'
           },
+          color: ["#ff0048","#ffff00"],
           legend: {
-            data:['最高气温','最低气温']
+            data:[
+              {name: '最大值', textStyle: {color: '#ffffff'}},
+              {name: '最小值', textStyle: {color: '#ffffff'}}
+            ]
           },
-          toolbox: {
-            show: true,
-            feature: {
-              dataZoom: {
-                yAxisIndex: 'none'
-              },
-              dataView: {readOnly: false},
-              magicType: {type: ['line', 'bar']},
-              restore: {},
-              saveAsImage: {}
-            }
-          },
+//          toolbox: {
+//            show: true,
+//            feature: {
+//              dataZoom: {
+//                yAxisIndex: 'none'
+//              },
+//              dataView: {readOnly: false},
+//              magicType: {type: ['line', 'bar']},
+//              restore: {},
+//              saveAsImage: {}
+//            }
+//          },
           xAxis:  {
             type: 'category',
             boundaryGap: false,
-            data: ['周一','周二','周三','周四','周五','周六','周日']
+            data: ['00:00', '00:02', '00:04', '00:06', '00:08', '00:10', '00:12', '00:14',
+              '00:16', '00:18', '00:20', '00:22', '00:24', '00:26', '00:28', '00:30', '00:32',
+              '00:34', '00:36', '00:38','00:40', '00:42', '00:44', '00:46', '00:48','00:50','00:52','00:54','00:56',
+              '00:58','1:00'],
+            axisLabel: {
+              textStyle: {
+                color: '#ffffff'
+              }
+            }
           },
           yAxis: {
             type: 'value',
+            min: 0,
+            max: 20,
+            interval: 4,
             axisLabel: {
-              formatter: '{value} °C'
+              formatter: '{value} m/s',
+              textStyle: {
+                color: '#ffffff'
+              }
             }
           },
           series: [
             {
-              name:'最高气温',
+              name:'最大值',
               type:'line',
               smooth: true,
-              data:[11, 11, 15, 13, 12, 13, 10],
-              markPoint: {
-                data: [
-                  {type: 'max', name: '最大值'},
-                  {type: 'min', name: '最小值'}
-                ]
+              data:[12,13,14,15,16,18,19,20,19,20,
+                12,13,14,15,16,18,19,20,19,20,
+                12,13,14,15,16,18,19,20,19,20,
+                12,13,14,15,16,18,19,20,19,20,
+                12,13,14,15,16,18,19,20,19,20,
+                12,13,14,15,16,18,19,20,19,20,],
+              lineStyle: {
+                normal: {
+                  color: '#ff0048'
+                }
               },
-              markLine: {
-                data: [
-                  {type: 'average', name: '平均值'}
-                ]
-              }
+//              markPoint: {
+//                data: [
+//                  {type: 'max', name: '最大值'},
+//                  {type: 'min', name: '最小值'}
+//                ]
+//              },
+//              markLine: {
+//                data: [
+//                  {type: 'average', name: '平均值'}
+//                ]
+//              }
             },
             {
-              name:'最低气温',
+              name:'最小值',
               type:'line',
               smooth: true,
-              data:[1, -2, 2, 5, 3, 2, 0],
-              markPoint: {
-                data: [
-                  {name: '周最低', value: -2, xAxis: 1, yAxis: -1.5}
-                ]
+              data:[8,6,7,8,9,10,8,6,5,4,
+                8,6,7,8,9,10,8,6,5,4,
+                8,6,7,8,9,10,8,6,5,4,
+                8,6,7,8,9,10,8,6,5,4,
+                8,6,7,8,9,10,8,6,5,4,
+                8,6,7,8,9,10,8,6,5,4,],
+              lineStyle: {
+                normal: {
+                  color: '#ffff00'
+                }
               },
-              markLine: {
-                data: [
-                  {type: 'average', name: '平均值'},
-                  [{
-                    symbol: 'none',
-                    x: '90%',
-                    yAxis: 'max'
-                  }, {
-                    symbol: 'circle',
-                    label: {
-                      normal: {
-                        position: 'start',
-                        formatter: '最大值'
-                      }
-                    },
-                    type: 'max',
-                    name: '最高点'
-                  }]
-                ]
-              }
+//              markPoint: {
+//                data: [
+//                  {name: '周最低', value: -2, xAxis: 1, yAxis: -1.5}
+//                ]
+//              },
+//              markLine: {
+//                data: [
+//                  {type: 'average', name: '平均值'},
+//                  [{
+//                    symbol: 'none',
+//                    x: '90%',
+//                    yAxis: 'max'
+//                  }, {
+//                    symbol: 'circle',
+//                    label: {
+//                      normal: {
+//                        position: 'start',
+//                        formatter: '最大值'
+//                      }
+//                    },
+//                    type: 'max',
+//                    name: '最高点'
+//                  }]
+//                ]
+//              }
             }
           ]
         })
@@ -382,7 +506,7 @@
                 },
                 offsetCenter: [0, 140],
                 textStyle: {
-                  fontSize: 40
+                  fontSize: 15
                 }
               },
               data: [{
@@ -480,75 +604,160 @@
           campus.setOption(option, true);
         }, 1000);
       },
-      averageInfo() {
-        let average = echarts.init(document.getElementById("average"));
-        function randomData() {
-          now = new Date(+now + oneDay);
-          value = value + Math.random() * 21 - 10;
-          return {
-            name: now.toString(),
-            value: [
-              [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
-              Math.round(value)
-            ]
-          }
+      handleClick(tab,event) {
+        console.log(tab,event)
+      },
+      avWindSpTab(key) {
+        this.avSpeedArr.forEach((val) => {
+          val.doTimeTabActive = false;
+        })
+        this.avSpeedArr[key].doTimeTabActive = !this.avSpeedArr[key].doTimeTabActive;
+        if (key === 0) {
+          this.avSpeed2min = true
+          this.avSpeed10min = false
+        } else {
+          this.avSpeed2min = false
+          this.avSpeed10min = true
         }
-        var data = [];
-        var now = +new Date(1997, 9, 3);
-        var oneDay = 24 * 3600 * 1000;
-        var value = Math.random() * 1000;
-        for (var i = 0; i < 1000; i++) {
-          data.push(randomData());
-        }
-        average.setOption({
+      },
+
+
+//      averageInfo() {
+//        let average = echarts.init(document.getElementById("average"));
+//        average.setOption({
+//          title: {
+//            text: '2min平均风速',
+//            textStyle: {
+//              color: '#ffffff'
+//            }
+//          },
+//          tooltip: {
+//            trigger: 'axis',
+//            axisPointer: {
+//              type: 'cross'
+//            }
+//          },
+//          xAxis:  {
+//            type: 'category',
+//            boundaryGap: false,
+//            data: ['00:00', '00:02', '00:04', '00:06', '00:08', '00:10', '00:12', '00:14',
+//              '00:16', '00:18', '00:20', '00:22', '00:24', '00:26', '00:28', '00:30', '00:32',
+//              '00:34', '00:36', '00:38','00:40', '00:42', '00:44', '00:46', '00:48','00:50','00:52','00:54','00:56',
+//              '00:58','1:00']
+//          },
+//          yAxis: {
+//            type: 'value',
+//            axisLabel: {
+//              formatter: '{value} m/s'
+//            },
+//            axisPointer: {
+//              snap: true
+//            }
+//          },
+//          visualMap: {
+//            show: false,
+//            dimension: 0,
+//            pieces: [{
+//              lte: 6,
+//              color: 'green'
+//            }, {
+//              gt: 6,
+//              lte: 8,
+//              color: 'red'
+//            }, {
+//              gt: 8,
+//              lte: 14,
+//              color: 'green'
+//            }, {
+//              gt: 14,
+//              lte: 17,
+//              color: 'red'
+//            }, {
+//              gt: 17,
+//              color: 'green'
+//            }]
+//          },
+//          series: [
+//            {
+//              name:'2min平均速度',
+//              type:'line',
+//              smooth: true,
+//              data: [13,10,13,14,12,13,10,13,14,12,
+//                13,10,13,14,12,13,10,13,14,12,
+//                13,10,13,14,12,13,10,13,14,12,
+//                13,10,13,14,12,13,10,13,14,12,
+//                13,10,13,14,12,13,10,13,14,12,
+//                13,10,13,14,12,13,10,13,14,12,],
+//
+//            }
+//          ]
+//        })
+//      },
+
+
+      averageInfo2() {
+        let average2 = echarts.init(document.getElementById("average2"));
+        var average2_option = {
           title: {
-            text: '动态数据 + 时间坐标轴'
+            text: '10min平均风速',
+            textStyle: {
+              color: '#ffffff'
+            }
           },
           tooltip: {
             trigger: 'axis',
-            formatter: function (params) {
-              params = params[0];
-              var date = new Date(params.name);
-              return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
-            },
             axisPointer: {
-              animation: false
+              type: 'cross'
             }
           },
-          xAxis: {
-            type: 'time',
-            splitLine: {
-              show: false
-            }
+          xAxis:  {
+            type: 'category',
+            boundaryGap: false,
+            data: ['00:00', '00:10', '00:20', '00:30','00:40','00:50','1:00']
           },
           yAxis: {
             type: 'value',
-            boundaryGap: [0, '100%'],
-            splitLine: {
-              show: false
+            axisLabel: {
+              formatter: '{value} m/s'
+            },
+            axisPointer: {
+              snap: true
             }
           },
-          series: [{
-            name: '模拟数据',
-            type: 'line',
-            showSymbol: false,
-            hoverAnimation: false,
-            data: data
-          }]
-        })
-        setInterval(function () {
-
-          for (var i = 0; i < 5; i++) {
-            data.shift();
-            data.push(randomData());
-          }
-
-          average.setOption({
-            series: [{
-              data: data
+          visualMap: {
+            show: false,
+            dimension: 0,
+            pieces: [{
+              lte: 6,
+              color: 'green'
+            }, {
+              gt: 6,
+              lte: 8,
+              color: 'red'
+            }, {
+              gt: 8,
+              lte: 14,
+              color: 'green'
+            }, {
+              gt: 14,
+              lte: 17,
+              color: 'red'
+            }, {
+              gt: 17,
+              color: 'green'
             }]
-          });
-        }, 1000);
+          },
+          series: [
+            {
+              name:'10min平均速度',
+              type:'line',
+              smooth: true,
+              data: [13,10,13,14,12,13,10],
+
+            }
+          ]
+        }
+        average2.setOption(average2_option);
       }
     }
   }

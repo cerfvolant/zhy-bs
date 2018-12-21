@@ -21,29 +21,23 @@
         <div id="netSw-tab">
           <ul id="netSw-tab-ul">
             <li
+              @click="isTabActive(index)"
               v-for="(item,index) in netSwTab"
               :class="item.doTabIconActive?'tabIconChange':'tabIconNotChange'"
               class="netSw-tab-li">
               <svg-icon
-                @click.native="isTabNative(index)"
                 class="netSw-tab-icon"
                 :icon-class="item.netSwTabIcon">
               </svg-icon>
-              <!--<svg-icon-->
-                <!--@click.native="isTabNative(index)"-->
-                <!--:class="item.doTabIconActive?'tabIconChange':'tabIconNotChange'"-->
-                <!--class="netSw-tab-icon" v-for="(item,index) in netSwTab"-->
-                <!--:icon-class="item.netSwTabIcon">-->
-              <!--</svg-icon>-->
             </li>
           </ul>
         </div>
-        <!--接口item详情-->
+        <!--接口大区块详情-->
         <div class="netSw-port" id="netSw-port1">
           <div class="netSw-port-box clearfix">
             <!--接口sub切换-->
             <ul class="netSw-ul">
-              <li @click="isSubNative(index)" class="netSw-li" v-for="(item,index) in netSwLi">
+              <li @click="isSubActive(index)" class="netSw-li" v-for="(item,index) in netSwLi">
                 <svg-icon
                   :class="item.doSubIconActive?'subIconChange':'subIconNotChange'"
                   class="netSw-item-icon"
@@ -316,13 +310,13 @@
       }
     },
     methods: {
-      isTabNative (key) {
+      isTabActive (key) {
         this.netSwTab.forEach((val) => {
           val.doTabIconActive = false
         })
         this.netSwTab[key].doTabIconActive = !this.netSwTab[key].doTabIconActive;
       },
-      isSubNative (key) {
+      isSubActive (key) {
         this.netSwLi.forEach((val) => {
           val.doSubIconActive = false
         })

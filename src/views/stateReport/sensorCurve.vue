@@ -1,12 +1,12 @@
 <template>
   <div id="sensorCurve">
-    <el-col class="section" id="senCurve-section">
-      <div class="section-title" id="senCurve-title">
-        <el-col id="senCurve-title-left" :span="6">
+    <el-col class="section senCurve-section">
+      <div class="section-title senCurve-title">
+        <el-col class="senCurve-title-left" :span="11">
           <svg-icon class="svg-logo" icon-class="" />
           <span>温湿度历史曲线</span>
         </el-col>
-        <el-col id="senCurve-title-right">
+        <el-col class="senCurve-title-right" :span="5">
           <el-date-picker v-model="value2" align="right" type="date" placeholder="选择日期" :picker-options="pickerOptions"></el-date-picker>
         </el-col>
       </div>
@@ -59,32 +59,38 @@
         let senCurve = echarts.init(document.getElementById('senCurve'));
         senCurve.setOption({
           title: {
-            text: '折柱混合'
+            text: '温/湿度曲线',
+            textStyle: {
+              color: '#ffffff'
+            }
           },
           tooltip: {
             trigger: 'axis',
             axisPointer: {
-              type: 'cross',
+//              type: 'cross',
               crossStyle: {
                 color: '#999'
               }
             }
           },
-          toolbox: {
-            feature: {
-              dataView: {show: true, readOnly: false},
-              magicType: {show: true, type: ['line', 'bar']},
-              restore: {show: true},
-              saveAsImage: {show: true}
-            }
-          },
           legend: {
-            data:['蒸发量','降水量','平均温度']
+            data:[
+              {'name': '温度', textStyle: {color: '#ffffff'}},
+              {'name': '湿度', textStyle: {color: '#ffffff'}}
+            ]
           },
+          color: ['#3237ff','#00ffff'],
           xAxis: [
             {
               type: 'category',
-              data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+              data: ['00时','01时','02时','03时','04时','05时','06时','07时','08时','09时','10时','11时',
+                '12时','13时','14时','15时','16时','17时','18时','19时','20时',
+                '21时','22时','23时','24时'],
+              axisLabel: {
+                textStyle: {
+                  color: '#ffffff'
+                }
+              },
               axisPointer: {
                 type: 'shadow'
               }
@@ -93,41 +99,58 @@
           yAxis: [
             {
               type: 'value',
-              name: '水量',
+              name: '温度',
               min: 0,
-              max: 250,
-              interval: 50,
+              max: 30,
+              interval: 5,
               axisLabel: {
-                formatter: '{value} ml'
+                formatter: '{value} %',
+                textStyle: {
+                  color: '#ffffff'
+                }
               }
             },
             {
               type: 'value',
-              name: '温度',
+              name: '湿度',
               min: 0,
-              max: 25,
+              max: 30,
               interval: 5,
               axisLabel: {
-                formatter: '{value} °C'
+                formatter: '{value} °C',
+                textStyle: {
+                  color: '#ffffff'
+                }
               }
             }
           ],
           series: [
             {
-              name:'蒸发量',
-              type:'bar',
-              data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
-            },
-            {
-              name:'降水量',
-              type:'bar',
-              data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
-            },
-            {
-              name:'平均温度',
+              name:'温度',
               type:'line',
+              smooth: true,
+              lineStyle: {
+                normal: {
+                  color: '#3237ff'
+                }
+              },
               yAxisIndex: 1,
-              data:[2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
+              data:[15,22,16,14,16,23,15,18,16,25,
+                18,15,14,16,19,15,23,20,15,10,
+                15,15,14,13,14]
+            },
+            {
+              name:'湿度',
+              type:'line',
+              smooth: true,
+              lineStyle: {
+                normal: {
+                  color: '#00ffff'
+                }
+              },
+              data:[7,8,8,8,6,8,9,9,7,8,
+                7,8,8,10,7,8,7,10,8,8,
+                7,8,9,7,8]
             }
           ]
         })
@@ -137,9 +160,33 @@
 </script>
 
 <style lang="scss">
-  #senCurve-section {
-    #senCurve-title {
-      #senCurve-title-right {}
+  .senCurve-section {
+    .senCurve-title {
+      display: flex;
+      justify-content: space-between;
+      .senCurve-title-right {
+        height: 100%;
+        .el-input {
+          width: 100%;
+          height: 100%;
+          .el-input__inner {
+            height: 100%;
+          }
+          .el-input__prefix {
+            .el-input__icon {
+              line-height:inherit;
+            }
+          }
+          .el-input__suffix {
+            height: 100%;
+            .el-input__suffix-inner {
+              .el-input__icon {
+                line-height:inherit;
+              }
+            }
+          }
+        }
+      }
     }
   }
 </style>
